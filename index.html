@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Republic of Mali - Health Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Background Gradient */
+        body {
+            background: linear-gradient(to bottom, #14A34A, #FFD700, #CE1126);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header */
+        header {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            color: #14A34A;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Login Panel */
+        .login-panel {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 30px;
+            width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-panel h1 {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .login-panel h2 {
+            font-size: 20px;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* Input Fields */
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 40px 10px 40px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #888;
+        }
+
+        .input-group .eye-button {
+            position: absolute;
+            right: 50px; /* Align at the right end of the input field */
+            left: 308px; /* Adjust left position */
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #888;
+            cursor: pointer;
+        }
+
+        /* Login Button */
+        .login-button {
+            background-color: #14A34A;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #0f823c;
+        }
+
+        /* Links */
+        .links {
+            margin-top: 10px;
+        }
+
+        .links a {
+            font-size: 14px;
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <header>Republic of Mali</header>
+    <div class="login-panel">
+        <h1>Health Portal</h1>
+        <h2>Portail de Santé</h2>
+        <div class="input-group">
+            <i class="fa fa-user"></i>
+            <input type="text" id="username" placeholder="Username">
+        </div>
+        <div class="input-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="password" placeholder="Password">
+            <i class="fa fa-eye eye-button" id="togglePassword"></i>
+        </div>
+        <button class="login-button" onclick="login()">Log In / Se Connecter</button>
+        <div class="links">
+            <a href="#" onclick="forgotPassword()">Forgot Password?</a> | <a href="#" onclick="createAccount()">Create Account</a>
+        </div>
+    </div>
+
+    <script>
+        // Password visibility toggle
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('mousedown', () => {
+            passwordInput.type = 'text'; // Show password
+        });
+
+        togglePassword.addEventListener('mouseup', () => {
+            passwordInput.type = 'password'; // Hide password
+        });
+
+        togglePassword.addEventListener('mouseleave', () => {
+            passwordInput.type = 'password'; // Hide password if cursor leaves the button
+        });
+
+        // Login button functionality
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === '' || password === '') {
+                alert('Please fill in both username and password!');
+                return;
+            }
+
+            alert(`Welcome, ${username}! Logging in...`);
+        }
+
+        // Forgot Password link functionality
+        function forgotPassword() {
+            alert('Redirecting to the Forgot Password page...');
+        }
+
+        // Create Account link functionality
+        function createAccount() {
+            alert('Redirecting to the Create Account page...');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
